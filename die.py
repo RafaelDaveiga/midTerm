@@ -3,6 +3,7 @@ __author__ = "rafael daveiga"
 
 from random import randint
 
+
 class Die(object):
     def __init__(self, beginningSides = 6, beginningStartingValue = 1, numberOfSides = 6, beginningColor = "Done"):
         self.numberOfSides = beginningSides
@@ -16,7 +17,7 @@ class Die(object):
     def getValue(self):
         return self.getValue
 
-    def setvalue(self, newValue = 0):
+    def setValue(self, newValue = 0):
         self.value = newValue
 
     def roll(self):
