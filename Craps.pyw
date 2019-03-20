@@ -5,14 +5,14 @@ import sys
 import diceResources_rc
 from PyQt5.QtCore import pyqtSlot
 from PyQt5 import QtGui, uic
-from PyQt5.QtWidgets import  QMainWindow, QWidget, QApplication
+from PyQt5.QtWidgets import QMainWindow, QWidget, QApplication
 
 
 class Dice( QMainWindow) :
     """A game of Dice."""
     die1 = die2 = None
 
-    def __init__( self, parent=None ):
+    def __init__(self, parent=None):
         """Build a game with two dice."""
 
         super().__init__(parent)
@@ -29,13 +29,13 @@ class Dice( QMainWindow) :
 
         return "Die1: %s\nDie2: %s" % ( self.die1, self.die2)
 
-    def updateUI ( self ):
+    def updateUI (self):
         self.die1View.setPixmap(QtGui.QPixmap(":/" + str(self.die1.getValue())))
         self.die2View.setPixmap(QtGui.QPixmap(":/" + str(self.die2.getValue())))
         pass
 
     #@QtCore.pyqtSignature("")				# Player asked for another roll of the dice.
-    def rollButtonClickedHandler ( self ):
+    def rollButtonClickedHandler (self):
         print("Roll button clicked")
         self.die1.roll()
         self.die2.roll()

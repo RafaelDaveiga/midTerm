@@ -77,8 +77,8 @@ class CrapsCLI(object):
 
     def quitGame(self, event):
         if self.guitCounter == 0:
-           self.quitCounter +=  1
-            quitMessage = "Are You Sure You Want To Quit"
+           self.quitCounter += 1
+           self.quitMessage = "Are You Sure You Want To Quit"
 
 
 gameObject = CrapsCLI()
