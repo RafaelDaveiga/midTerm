@@ -46,4 +46,4 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.rollButton.setText(_translate("MainWindow", "PushButton"))
 
-import diceResources_rc
+import crapsResources_rc
