@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+__author__ = "Rafael Da Veiga"
 
 from sys import path
 from die import *
@@ -15,6 +16,7 @@ startingBankDefault = 100
 maximumBetDefault = 100
 minimumBetDefault = 10
 logFilenameDefault = 'craps.log'
+createLogFileDefault = False
 pickleFilenameDefault = ".crapsSavedObjects.pl"
 
 
@@ -27,7 +29,7 @@ class Craps(QMainWindow):
 
         super().__init__(parent)
 
-        self.logger = getLogger("Fireheart.craps")
+        self.logger = getLogger("Rafael.craps")
         self.appSettings = QSettings()
         self.quitCounter = 0;  # used in a workaround for a QT5 bug.
 
@@ -40,7 +42,7 @@ class Craps(QMainWindow):
 
         if path.exists(self.pickleFilename):
             self.die1, self.die2, self.firstRoll, self.results, self.playerLost, self.firstRollValue, self.buttonText, \
-            self.wins, self.losses, self.currentBet, self.currentBank = self.restoreGame()
+                self.wins, self.losses, self.currentBet, self.currentBank = self.restoreGame()
         else:
             self.restartGame()
 
@@ -95,8 +97,8 @@ def restartGame(self):
 def saveGame(self):
     if self.createLogFile:
         self.logger.debug("Saving game")
-    saveItems = (
-        self.die1, self.die2, self.firstRoll, self.results, self.playerLost, self.firstRollValue, self.buttonText,
+    saveItems = (self.die1, self.die2, self.firstRoll, self.results, self.playerLost, self.firstRollValue, \
+                 self.buttonText,
         self.wins, self.losses, self.currentBet, self.currentBank)
     if self.appSettings.contains('pickleFilename'):
         with open(path.join(path.dirname(path.realpath(__file__)), self.appSettings.value('pickleFilename', type=str)),
