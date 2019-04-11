@@ -118,6 +118,12 @@ def restoreGame(self):
 
 
 def restoreSettings(self):
+    if appSettings.contains('createLogFile'):
+        self.createLogFile = appSettings.value('createLogFile')
+    else:
+        self.createLogFile = createLogFileDefault
+        appSettings.setValue('createLogFile', createLogFile)
+
     if self.createLogFile:
         self.logger.debug("Starting restoreSettings")
     # Restore settings values, write defaults to any that don't already exist.
