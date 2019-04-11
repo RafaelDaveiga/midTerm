@@ -10,8 +10,8 @@ class CrapsCLI(object):
         self.die2 = Die()
         self.currentBet = 0
         self.rollValue = 0
-        self.beginningBank = 2000
-        self.currentBank = self.beginningBank
+        self.startingBank = 2000
+        self.currentBank = self.startingBank
         self.firstRoll = True
         self.firstRollValue = 0
         self.numberOfWins = 0
