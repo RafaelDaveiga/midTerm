@@ -20,10 +20,7 @@ class CrapsCLI(object):
 
     def __str__(self):
         return "FirstRoll: {0} RollValue: {1} Bank: {2} Wins: {3} Losses: {4}".format(self.firstRoll, self.rollValue,
-                                                                                      self.currentBank,
-                                                                                      self.numberOfWins,
-                                                                                      self.numberOFLoses)
-
+                                                             self.currentBank, self.numberOfWins, self.numberOFLoses)
     # setters getters later
 
     def getRollValue(self):
@@ -44,7 +41,7 @@ class CrapsCLI(object):
             else:
                 self.firstRoll = False
                 self.firstRollValue = self.rollValue
-        else:  # play second roll
+        #else:  # play second roll
             if self.rollValue == self.firstRollValue:
                 self.settleWin()
             else:
@@ -76,7 +73,7 @@ class CrapsCLI(object):
             if wonGame:
                 self.currentBank += betValue * self.payouts[firstRollValue]
             else:
-                self.currentBank += betValue * self.payouts[firstRollValue]
+                self.currentBank -= betValue * self.payouts[firstRollValue]
 
     def quitGame(self, event):
         if self.guitCounter == 0:

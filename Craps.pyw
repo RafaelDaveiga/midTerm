@@ -97,9 +97,8 @@ def restartGame(self):
 def saveGame(self):
     if self.createLogFile:
         self.logger.debug("Saving game")
-    saveItems = (self.die1, self.die2, self.firstRoll, self.results, self.playerLost, self.firstRollValue, \
-                 self.buttonText,
-        self.wins, self.losses, self.currentBet, self.currentBank)
+    saveItems = (self.die1, self.die2, self.firstRoll, self.results, self.playerLost, self.firstRollValue,
+                 self.buttonText, self.wins, self.losses, self.currentBet, self.currentBank)
     if self.appSettings.contains('pickleFilename'):
         with open(path.join(path.dirname(path.realpath(__file__)), self.appSettings.value('pickleFilename', type=str)),
                   'wb') as pickleFile:
