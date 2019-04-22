@@ -31,7 +31,7 @@ class Craps(QMainWindow):
 
         self.logger = getLogger("Rafael.craps")
         self.appSettings = QSettings()
-        self.quitCounter = 0;  # used in a workaround for a QT5 bug.
+        self.quitCounter = 0  # used in a workaround for a QT5 bug.
 
         uic.loadUi("Craps.ui", self)
 
@@ -265,7 +265,7 @@ def closeEvent(self, event):
             event.accept()
         else:
             event.ignore()
-        return super().closeEvent(event)
+        return super().closeevent(event)
 
 
 class PreferencesDialog(QDialog):
