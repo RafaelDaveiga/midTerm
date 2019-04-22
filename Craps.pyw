@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-__author__ = "Rafael Da Veiga"
+__author__ = " Rafael Da Veiga "
 
 from sys import path
 from die import *
